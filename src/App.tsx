@@ -40,6 +40,16 @@ import postman from './assets/Sponsor post/postman.png';
 import unstopLogo from './assets/Sponsor post/unstop.png';
 import xyzLogo from './assets/Sponsor post/xyz.png';
 import youngXcode from './assets/Sponsor post/youngxcode.png';
+import alphonic from './assets/Sponsor post/Alphonic.png';
+import appyzie from './assets/Sponsor post/Appyzie.png';
+import brandmetrics from './assets/Sponsor post/Brandmetrics.png';
+import mandelbulb from './assets/Sponsor post/Mandelbulb.png';
+import moneyGrow from './assets/Sponsor post/MoneyGrow.png';
+import sumindex from './assets/Sponsor post/SUMINDEX.png';
+import wavvyy from './assets/Sponsor post/Wavvyy.png';
+import zordial from './assets/Sponsor post/Zordial.png';
+import kabadcart from './assets/Sponsor post/kabadcart.png';
+import youthTalks from './assets/Sponsor post/youth Talks.png';
 
 // Import images
 import hlogo from './assets copy/HAV2.0_.png';
@@ -94,11 +104,18 @@ import {
   X,
   Phone,
   UserCheck,
-  Award as Trophy,
+  Trophy,
+  Award,
   AlertTriangle,
   Laptop,
   CreditCard,
   Gift,
+  Clock,
+  Mic,
+  Users,
+  Music,
+  Coffee,
+  Upload,
 } from 'lucide-react';
 
 // Loader component
@@ -138,125 +155,81 @@ const agentRoles = {
 // Timeline Data with Valorant theme
 // Timeline Data with Valorant theme - Updated Schedule
 // Timeline Data with Valorant theme - Precise Timing
-// const day1Data = [
-//   {
-//     time: "13:00",
-//     event: "Registration & Check in of Participants",
-//     icon: UserCheck,
-//     duration: "13:00 - 15:45 (2h 45m)"
-//   },
-//   {
-//     time: "16:00",
-//     event: "Inauguration Ceremony & Introductory Session, Problem Statements Revealed",
-//     icon: Mic,
-//     duration: "16:00 - 17:30 (1h 30m)"
-//   },
-//   {
-//     time: "17:30",
-//     event: "Participants start the coding",
-//     icon: Codesandbox,
-//     duration: "17:30 - Ongoing"
-//   },
-//   {
-//     time: "18:30",
-//     event: "Session by any partner / sponsor",
-//     icon: Users,
-//     duration: "18:30 - 19:30 (1h)"
-//   },
-//   {
-//     time: "19:30",
-//     event: "Participants continue with their projects",
-//     icon: Codesandbox,
-//     duration: "19:30 - 20:30 (1h)"
-//   },
-//   {
-//     time: "20:30",
-//     event: "Dinner Begins (Continued in slots)",
-//     icon: Utensils,
-//     duration: "20:30 - 22:00 (1h 30m)"
-//   },
-//   {
-//     time: "22:00",
-//     event: "Mentor Round 1",
-//     icon: Shield,
-//     duration: "22:00 - 23:00 (1h)"
-//   },
-//   {
-//     time: "23:00",
-//     event: "Fun Networking sessions for participants",
-//     icon: Music,
-//     duration: "23:00 - 00:00 (1h)"
-//   }
-// ];
+const day1Data = [
+  {
+    time: "9:00 AM - 3:00 PM",
+    event: "Registration and Check-in of Participants",
+    icon: UserCheck
+  },
+  {
+    time: "3:00 PM",
+    event: "Inauguration Ceremony & Revealing of Problem Statements",
+    icon: Mic
+  },
+  {
+    time: "4:00 PM",
+    event: "Participants Begin Coding",
+    icon: Laptop
+  },
+  {
+    time: "7:00 PM - 8:00 PM",
+    event: "Session by Appyzie on Low-Code, Automation, and AI",
+    icon: Users
+  },
+  {
+    time: "10:00 PM",
+    event: "Mentor Round 1",
+    icon: Shield
+  },
+  {
+    time: "11:30 PM - 12:00 AM",
+    event: "Pac Quest by GDG ACEIT",
+    icon: Gamepad2
+  },
+  {
+    time: "12:00 AM",
+    event: "Networking Session for Participants",
+    icon: MessageSquare
+  }
+];
 
-// const day2Data = [
-//   {
-//     time: "00:00",
-//     event: "FUN Zone Begins & participants continue to code",
-//     icon: Music,
-//     duration: "00:00 - 01:30 (1h 30m)"
-//   },
-//   {
-//     time: "01:30",
-//     event: "Mid-night snacks time",
-//     icon: Coffee,
-//     duration: "01:30 - 02:30 (1h)"
-//   },
-//   {
-//     time: "02:30",
-//     event: "Sponsor / Partner Session",
-//     icon: Users,
-//     duration: "02:30 - 03:00 (30m)"
-//   },
-//   {
-//     time: "03:00",
-//     event: "Participants continue",
-//     icon: Codesandbox,
-//     duration: "03:00 - 08:00 (5h)"
-//   },
-//   {
-//     time: "08:00",
-//     event: "Breakfast (Slots)",
-//     icon: Utensils,
-//     duration: "08:00 - 09:30 (1h 30m)"
-//   },
-//   {
-//     time: "09:30",
-//     event: "Session by Partners / Sponsors",
-//     icon: Users,
-//     duration: "09:30 - 10:00 (30m)"
-//   },
-//   {
-//     time: "10:00",
-//     event: "Mentor Round 2",
-//     icon: Shield,
-//     duration: "10:00 - 12:00 (2h)"
-//   },
-//   {
-//     time: "12:00",
-//     event: "Lunch (Slots)",
-//     icon: Utensils,
-//     duration: "12:00 - 13:30 (1h 30m)"
-//   },
-//   {
-//     time: "13:30",
-//     event: "Judging Round",
-//     icon: Award,
-//     duration: "13:30 - 15:00 (1h 30m)"
-//   },
-//   {
-//     time: "15:00",
-//     event: "Project Submission",
-//     icon: Upload,
-//     duration: "15:00 - 16:00 (1h)"
-//   },
-//   {
-//     time: "16:00",
-//     event: "Valedictory Sessions / Closing Session",
-//     icon: MessageSquare,
-//     duration: "16:00 - 17:00 (1h)"
-//   }
-// ];
+const day2Data = [
+  {
+    time: "1:00 AM - 2:00 AM",
+    event: "FUN Zone Begins & Music Jamming",
+    icon: Music
+  },
+  {
+    time: "2:00 AM",
+    event: "Participants Continue Hacking & Finalize Key Modules",
+    icon: Laptop
+  },
+  {
+    time: "7:00 AM - 8:00 AM",
+    event: "Freshen Up and Prepare for the Final Stretch",
+    icon: Coffee
+  },
+  {
+    time: "10:00 AM",
+    event: "Mentor Round 2 (Final Mentoring Round)",
+    icon: Shield
+  },
+  {
+    time: "1:00 PM",
+    event: "Project Submission, Code Freeze and Handover",
+    icon: Upload
+  },
+  {
+    time: "2:00 PM",
+    event: "Judging Round & Final Evaluation Begins",
+    icon: Trophy
+  },
+  {
+    time: "3:00 PM",
+    event: "Valedictory / Closing Ceremony, Announcement of Winners & Vote of Thanks",
+    icon: Award
+  }
+];
 // FAQs Data
 const faqsData = {
   general: [
@@ -727,115 +700,80 @@ function FAQsSection() {
 
 
 function TimelineSection() {
+  const [activeDay, setActiveDay] = useState(1);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const activeData = activeDay === 1 ? day1Data : day2Data;
+
   return (
     <section id="timeline" className="py-20 px-4 valorant-section">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto">
         <h2 className="section-title">Event Timeline</h2>
 
-        <div className="mt-12 flex flex-col items-center justify-center">
-          {/* Coming Soon Message */}
-          <div className="theme-card w-full md:w-2/3 p-10 rounded-lg shadow-lg bg-black/40 border border-[#ffffff]/40">
-            <p className="text-2xl font-bold valorant-text-gradient mb-2">
-              Timeline Coming Soon...
-            </p>
-            <p className="text-gray-400 text-sm">
-              Stay tuned for the full event schedule. More details will be shared soon!
-            </p>
-          </div>
+        {/* Day Selector Buttons */}
+        <div className="flex justify-center gap-4 mb-12">
+          <button
+            onClick={() => setActiveDay(1)}
+            className={`valorant-button ${activeDay === 1 ? 'bg-[#ff4655]' : 'bg-transparent'}`}
+          >
+            <span>Day 1 (Mar 14)</span>
+          </button>
+          <button
+            onClick={() => setActiveDay(2)}
+            className={`valorant-button ${activeDay === 2 ? 'bg-[#ff4655]' : 'bg-transparent'}`}
+          >
+            <span>Day 2 (Mar 15)</span>
+          </button>
+        </div>
 
-          {/* Simple Placeholder Line */}
-          <div className="mt-8 w-1/2 h-1 bg-[#ffffff]/50 animate-pulse rounded"></div>
+        {/* Timeline Content */}
+        <div className="relative">
+          {/* Timeline Line */}
+          <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-[#ff4655] transform -translate-x-1/2"></div>
+
+          <div className="space-y-12">
+            {activeData.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={index}
+                  className={`relative pl-12 md:pl-0 md:flex ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
+                    } transition-all duration-500 ${activeIndex === index ? 'scale-105' : 'scale-100'}`}
+                  onMouseEnter={() => setActiveIndex(index)}
+                  onMouseLeave={() => setActiveIndex(null)}
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute left-2 md:left-1/2 w-4 h-4 bg-[#ff4655] rounded-full transform -translate-x-1/2 z-10"></div>
+
+                  {/* Timeline Card */}
+                  <div
+                    className={`theme-card valorant-card-hover group w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'
+                      }`}
+                  >
+                    <div className="flex items-start">
+                      <div className="mr-4 mt-1">
+                        <Icon className="w-6 h-6 text-[#ff4655] valorant-pulse" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <Clock className="w-4 h-4 text-gray-400 mr-2" />
+                            <span className="text-sm text-gray-400">{item.time}</span>
+                          </div>
+                        </div>
+                        <h3 className="text-xl font-bold mb-1 valorant-text-gradient">{item.event}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
-
-
-// function TimelineSection() {
-//   const [activeDay, setActiveDay] = useState(1);
-//   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-//   const activeData = activeDay === 1 ? day1Data : day2Data;
-
-//   return (
-//     <section id="timeline" className="py-20 px-4 valorant-section">
-//       <div className="max-w-6xl mx-auto">
-//         <h2 className="section-title">Mission Timeline</h2>
-
-//         {/* Day Selector Buttons */}
-//         <div className="flex justify-center gap-4 mb-12">
-//           <button
-//             onClick={() => setActiveDay(1)}
-//             className={`valorant-button ${activeDay === 1 ? 'bg-[#ff4655]' : 'bg-transparent'}`}
-//           >
-//             <span>Day 1: Mission Launch</span>
-//           </button>
-//           <button
-//             onClick={() => setActiveDay(2)}
-//             className={`valorant-button ${activeDay === 2 ? 'bg-[#ff4655]' : 'bg-transparent'}`}
-//           >
-//             <span>Day 2: Final Push</span>
-//           </button>
-//         </div>
-
-//         {/* Timeline Content */}
-//         <div className="relative">
-//           {/* Timeline Line */}
-//           <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-[#ff4655] transform -translate-x-1/2"></div>
-
-//           <div className="space-y-12">
-//             {activeData.map((item, index) => {
-//               const Icon = item.icon;
-//               return (
-//                 <div
-//                   key={index}
-//                   className={`relative pl-12 md:pl-0 md:flex ${
-//                     index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
-//                   } transition-all duration-500 ${activeIndex === index ? 'scale-105' : 'scale-100'}`}
-//                   onMouseEnter={() => setActiveIndex(index)}
-//                   onMouseLeave={() => setActiveIndex(null)}
-//                 >
-//                   {/* Timeline Dot */}
-//                   <div className="absolute left-2 md:left-1/2 w-4 h-4 bg-[#ff4655] rounded-full transform -translate-x-1/2 z-10"></div>
-
-//                   {/* Timeline Card */}
-//                   <div
-//                     className={`theme-card valorant-card-hover group w-full md:w-5/12 ${
-//                       index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'
-//                     }`}
-//                   >
-//                     <div className="flex items-start">
-//                       <div className="mr-4 mt-1">
-//                         <Icon className="w-6 h-6 text-[#ff4655] valorant-pulse" />
-//                       </div>
-//                       <div className="flex-1">
-//                         <div className="flex items-center justify-between">
-//                           <div className="flex items-center">
-//                             <Clock className="w-4 h-4 text-gray-400 mr-2" />
-//                             <span className="text-sm text-gray-400">{item.time}</span>
-//                           </div>
-//                           {item.duration && (
-//                             <span className="text-xs bg-[#ff4655]/10 text-[#ff4655] px-2 py-1 rounded">
-//                               {item.duration}
-//                             </span>
-//                           )}
-//                         </div>
-//                         <h3 className="text-xl font-bold mb-1 valorant-text-gradient">{item.event}</h3>
-//                         {/* Add description here if available in your data */}
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </div>
-//               );
-//             })}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 function BelongingsSection() {
   return (
@@ -1322,6 +1260,10 @@ function App() {
                   { img: celabal, name: 'CELEBAL TECHNOLOGIES' },
                   { img: cloudy, name: 'CLOUDY CODERS' },
                   { img: habileLabs, name: 'HABILELABS' },
+                  { img: moneyGrow, name: 'MONEYGROW' },
+                  { img: appyzie, name: 'APPYZIE' },
+                  { img: brandmetrics, name: 'BRANDMETRICS' },
+                  { img: sumindex, name: 'SUMINDEX' },
                   // Light/White Background Logos
                   { img: origin, name: 'ORIGIN' },
                   { img: youngXcode, name: 'YOUNGXCODE' },
@@ -1331,6 +1273,12 @@ function App() {
                   { img: softserv, name: 'SOFTSERV' },
                   { img: meta, name: 'METACUBE' },
                   { img: grass, name: 'GRRAS' },
+                  { img: mandelbulb, name: 'MANDELBULB' },
+                  { img: alphonic, name: 'ALPHONIC' },
+                  { img: wavvyy, name: 'WAVVYY' },
+                  { img: zordial, name: 'ZORDIAL' },
+                  { img: kabadcart, name: 'KABADCART' },
+                  { img: youthTalks, name: 'YOUTH TALKS' },
                 ].map((sponsor, idx) => (
                   <ScrollReveal key={idx} delay={0.1 * (idx % 4)}>
                     <TiltCard className="terminal-card flex flex-col items-center justify-center p-6 bg-[rgba(15,20,30,0.8)] h-64 w-64 border-[1px] border-[#007FFF]/40 hover:border-[#007FFF] transition-colors relative overflow-hidden group">
